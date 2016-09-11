@@ -1,0 +1,90 @@
+﻿<Window x:Class="KinectHandTracking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Kinect 2 hand tracking" 
+        Height="800" Width="1200" 
+        Loaded="Window_Loaded" Closed="Window_Closed" WindowState="Maximized"
+        WindowStartupLocation="CenterOwner"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:cmd="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+        xmlns:local="clr-namespace:KinectHandTracking.Helpers"
+        
+        DataContext="{Binding Main, Source={StaticResource Locator}}"  
+        
+        WindowStyle="None"
+        >
+
+    
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <cmd:EventToCommand Command="{Binding LoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <ContentControl Content="{Binding CurrentViewModel}" />
+    
+    <!--<WebBrowser Name="wbSample" Loaded="wbSample_Loaded" Visibility="Visible" 
+                local:WebBrowserUtility.BindableSource="{Binding Path=Browser.WebAddress, Source={StaticResource Locator}}" 
+                
+                ></WebBrowser>-->
+
+
+    <!--<Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+
+        <Viewbox Grid.Column="1">
+            <TextBlock Text="{Binding BodyCount}" />
+        </Viewbox>
+        <Viewbox Grid.Column="2">
+            <WebBrowser Name="wbSample" Loaded="wbSample_Loaded" Visibility="Visible" local:WebBrowserUtility.BindableSource="{Binding Path=Browser.WebAddress, Source={StaticResource Locator}}" ></WebBrowser>
+            
+            --><!--<Image Name="camera" />-->
+            <!--<Canvas Name="canvas" />--><!--
+
+        </Viewbox>
+        <Viewbox Grid.Column="3">
+        <TextBlock Text="{Binding HandState}" />
+        </Viewbox>-->
+        <!--<Viewbox Grid.Column="1" HorizontalAlignment="Right" >
+            <Image Source="{StaticResource BitmapHand}" Opacity="0.25"/>
+        </Viewbox>
+        <Viewbox Grid.Column="3" HorizontalAlignment="Right" >
+            <Grid>
+                <Image x:Name="RightHandImage"  Source="{StaticResource BitmapHand}" Opacity="0.25" />
+            </Grid>
+        </Viewbox>-->
+        <!--<StackPanel  Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" >
+            <Ellipse Width="40" Height="40" Fill="Green" />
+            <Ellipse Width="40" Height="40" Fill="Green" />
+            <Ellipse Width="40" Height="40" Fill="Green" />
+            <Ellipse Width="40" Height="40" Fill="Green" />
+            <Ellipse Width="40" Height="40" Fill="Green" />
+        </StackPanel>-->
+    <!--</Grid>-->
+
+    <!--
+        <Grid Style="{StaticResource ContainerStyle}">
+            <StackPanel Margin="20">
+                <StackPanel>
+                    <TextBlock Text="Right hand state:" Style="{StaticResource TitleStyle}" />
+                    <TextBlock Name="tblRightHandState" Text="-" Style="{StaticResource StateStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0,50,0,0">
+                    <TextBlock Text="Left hand state:" Style="{StaticResource TitleStyle}" />
+                    <TextBlock Name="tblLeftHandState" Text="-" Style="{StaticResource StateStyle}" />
+                </StackPanel>
+            </StackPanel>
+    </Grid> -->
+
+</Window>

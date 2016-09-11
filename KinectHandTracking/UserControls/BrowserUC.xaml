@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="KinectHandTracking.UserControls.BrowserUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KinectHandTracking.Helpers"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+    
+    <WebBrowser Name="wbSample" Loaded="wbSample_Loaded" Visibility="Visible" local:WebBrowserUtility.BindableSource="{Binding WebAddress}" 
+                local:WebBrowserUtility2.ScrollPosition="{Binding ScrollPosition}"
+                ></WebBrowser>
+</UserControl>

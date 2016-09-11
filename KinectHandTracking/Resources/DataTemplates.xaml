@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vm="clr-namespace:KinectHandTracking.ViewModel"
+                    xmlns:uc="clr-namespace:KinectHandTracking.UserControls"
+                    >
+    
+    <DataTemplate DataType="{x:Type vm:DialogViewModel}">
+        <uc:DialogUC></uc:DialogUC>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:WebBrowserViewModel}">
+        <uc:BrowserUC></uc:BrowserUC>
+    </DataTemplate>
+</ResourceDictionary>
